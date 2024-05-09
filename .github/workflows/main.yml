@@ -3,11 +3,13 @@ name: Push to S3
 on: [push]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
       - name: Setup AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -15,5 +17,4 @@ jobs:
           aws-secret-access-key: ${{secrets.PRIVATE_KEY}}
           aws-region: ap-northest-1
       - name: Sync files to S3 bucket
-        run: |
-          aws --region aws-region s3 sync sts.ap-northeast-1.amazonaws.com s3://hitforfun.com --no-progress --delete
+        run: aws s3 sync * s3://hitforfun.com
