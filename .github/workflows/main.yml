@@ -8,13 +8,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup Node
-        uses: actions/setup-node@v2
-      - name: Setup AWS CLI
-        uses: aws-actions/configure-aws-credentials@v1
+      - uses: jakejarvis/s3-sync-action@master
         with:
-          aws-access-key-id: AKIA2WPRRFJHTXOV6I7X
-          aws-secret-access-key: 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
-          aws-region: us-east-2
-      - name: Sync files to S3 bucket
-        run: aws s3 sync * s3://testings3pushbucket --delete
+          args: --acl public-read --follow-symlinks --delete --exclude '.git*/*'
+        env:
+          AWS_S3_BUCKET: hitforfun.com
+          AWS_ACCESS_KEY_ID: ${{secrets.PUBLIC_KEY}}
+          AWS_SECRET_ACCESS_KEY: ${{secrets.PRIVATE_KEY}}
+          AWS_REGION: 'ap-northeast-1'
