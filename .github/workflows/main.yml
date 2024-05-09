@@ -13,8 +13,8 @@ jobs:
       - name: Setup AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{secrets.PUBLIC_KEY}}
-          aws-secret-access-key: ${{secrets.PRIVATE_KEY}}
-          aws-region: ap-northest-1
+          aws-access-key-id: AKIA2WPRRFJHTXOV6I7X
+          aws-secret-access-key: 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
+          aws-region: us-east-2
       - name: Sync files to S3 bucket
-        run: aws s3 sync * s3://hitforfun.com
+        run: aws s3 sync * s3://testings3pushbucket
