@@ -16,4 +16,4 @@ jobs:
           aws-region: ap-northest-1
       - name: Sync files to S3 bucket
         run: |
-          aws s3 sync build s3://hitforfun.com --delete
+          aws --region aws-region s3 sync * s3://hitforfun.com --no-progress --delete
