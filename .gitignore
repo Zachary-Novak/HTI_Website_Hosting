@@ -1,6 +1,7 @@
 # Ignoring unneeded files
 .DS_Store
 .git
+.github
 ..
 
 # Test
