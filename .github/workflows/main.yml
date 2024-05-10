@@ -16,3 +16,4 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{secrets.PUBLIC_KEY}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.PRIVATE_KEY}}
           AWS_REGION: 'ap-northeast-1'
+          AWS_S3_ENDPOINT: "sts.ap-northeast-1.amazonaws.com"
