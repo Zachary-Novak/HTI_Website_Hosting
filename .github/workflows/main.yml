@@ -15,4 +15,4 @@ jobs:
           aws-secret-access-key: ${{secrets.PRIVATE_KEY}}
           aws-region: 'ap-northeast-1'
       - name: Sync to S3
-        run: aws s3 sync HTI_Website_Hosting s3://hitforfun.com --delete
+        run: ls
