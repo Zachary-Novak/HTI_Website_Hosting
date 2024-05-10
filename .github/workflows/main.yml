@@ -15,4 +15,4 @@ jobs:
           aws-secret-access-key: ${{secrets.PRIVATE_KEY}}
           aws-region: 'ap-northeast-1'
       - name: Sync to S3
-        run: ls
+        run: ls ~/
