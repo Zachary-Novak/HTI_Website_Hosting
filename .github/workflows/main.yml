@@ -20,9 +20,7 @@ jobs:
       - name: Build app
         run: npm run build --prefix hit_website
       - name: Test files
-        run: 
-          - cd hit_website
-          - ls
+        run: cd hit_website
       - name: AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -30,4 +28,4 @@ jobs:
           aws-secret-access-key: ${{secrets.PRIVATE_KEY}}
           aws-region: 'ap-northeast-1'
       - name: Sync to S3
-        run: aws s3 sync dist s3://hitforfun.com --delete
+        run: aws s3 sync hit_website/build/ s3://hitforfun.com --delete
