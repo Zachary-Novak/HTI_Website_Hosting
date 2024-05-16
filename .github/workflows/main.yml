@@ -16,9 +16,9 @@ jobs:
         with:
           node-version: '14'
       - name: Install dependencies
-        run: npm install
+        run: npm install --prefix ToS3
       - name: Build app
-        run: npm run build
+        run: npm run build --prefix ToS3
       - name: AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
