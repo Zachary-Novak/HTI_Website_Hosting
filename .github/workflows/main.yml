@@ -21,5 +21,9 @@ jobs:
           aws-access-key-id: ${{secrets.PUBLIC_KEY}}
           aws-secret-access-key: ${{secrets.PRIVATE_KEY}}
           aws-region: 'ap-northeast-1'
-      - name: Build and push to S3
-        run: npm install --prefix hit_website ; npm run build --prefix hit_website ; cd hit_website ; ls
+      - name: Install dependencies
+        run: npm install --prefix hit_website
+      - name: Build app
+        run: npm run build --prefix hit_website
+      - name: Sync to S3
+        run: aws s3 sync hit_website/dist/ s3://hitforfun.com --delete
