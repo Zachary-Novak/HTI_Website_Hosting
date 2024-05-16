@@ -1,1 +1,16 @@
 Just a simple readMe. We can update it later
+
+
+#### Steps to run locally
+
+- cd hit_website
+- npm install
+- npm run dev
+
+Then go to the link it goes you
+
+#### How to push to S3
+
+- The workflow file will take care of almost all of it for you
+- Simply push to your branch and then go to the repo and merge to main
+- http://hitforfun.com.s3-website-ap-northeast-1.amazonaws.com
