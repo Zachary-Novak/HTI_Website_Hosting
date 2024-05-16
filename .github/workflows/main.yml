@@ -24,6 +24,6 @@ jobs:
       - name: Install dependencies
         run: cd hit_website ; npm install
       - name: Build app
-        run: cd hit_website ;  npm run build
+        run: cd hit_website ;  npm run build --verbose
       - name: Sync to S3
         run: aws s3 sync hit_website/dist/ s3://hitforfun.com --delete
