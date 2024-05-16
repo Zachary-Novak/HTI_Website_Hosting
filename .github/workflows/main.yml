@@ -16,9 +16,9 @@ jobs:
         with:
           node-version: '14'
       - name: Install dependencies
-        run: npm install --prefix ToS3
+        run: npm install --prefix hit-website
       - name: Build app
-        run: npm run build --prefix ToS3
+        run: npm run build --prefix hit-website
       - name: AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -26,4 +26,4 @@ jobs:
           aws-secret-access-key: ${{secrets.PRIVATE_KEY}}
           aws-region: 'ap-northeast-1'
       - name: Sync to S3
-        run: aws s3 sync ToS3 s3://hitforfun.com --delete
+        run: aws s3 sync hit-website/dist s3://hitforfun.com --delete
