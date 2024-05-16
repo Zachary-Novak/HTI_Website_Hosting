@@ -21,6 +21,10 @@ jobs:
         run: npm run build --prefix hit_website
       - name: Test files
         run: cd hit_website
+      - name: Test files
+        run: cd hit_website
+      - name: Test files 2
+        run: ls
       - name: AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
