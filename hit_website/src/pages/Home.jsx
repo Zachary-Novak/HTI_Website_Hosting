@@ -1,5 +1,4 @@
 import Header from '../components/Header'
-import Meta from '../components/Meta'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -147,7 +146,7 @@ const Home = () => {
             </Card>
             
             <Card onClick={handleWrongClick} style={{ "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)", marginBottom:20}}>
-            <img style={{cursor:"pointer" ,backgroundColor:'#ADD8E6', height:400, borderRadius:4}} src={require("../assets/images/screenshot_20240614_at_1629451.png")} />
+            <img style={{cursor:"pointer" ,backgroundColor:'#ADD8E6', height:400, borderRadius:4}} src="/assets/images/screenshot_20240614_at_1629451.png" />
 
             </Card>
           </div>
@@ -196,7 +195,7 @@ const Home = () => {
                 <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
                 <Card.Text>
                 <strong style={{ fontSize: 20 }}>
-            <img style={{backgroundColor:'#ADD8E6', borderRadius:4, margin:5}} src={require("../assets/images/hti_logo_4.png")} />
+            <img style={{backgroundColor:'#ADD8E6', borderRadius:4, margin:5}} src="/assets/images/hti_logo_4.png" />
 
             WasedaConnect!
           </strong>                WasedaConnect is an imaginary forum website created by Group 1 of the class Human Technology Interface, aiming to explore various aspects of user interaction. 
@@ -209,7 +208,7 @@ Currently, we are conducting a study on the differences between Japanese and Wes
 
 
             <Card onClick={handleWrongClick} style={{ "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)", marginBottom:20}}>
-            <img style={{cursor:"pointer" ,backgroundColor:'#ADD8E6', height:400, borderRadius:4}} src={require("../assets/images/screenshot_20240614_at_1639571.png")} />
+            <img style={{cursor:"pointer" ,backgroundColor:'#ADD8E6', height:400, borderRadius:4}} src="/assets/images/screenshot_20240614_at_1639571.png" />
 
             </Card>
 
@@ -233,7 +232,7 @@ Currently, we are conducting a study on the differences between Japanese and Wes
             </Card>
             
             <Card onClick={handleWrongClick} style={{ "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)", marginBottom:20}}>
-            <img style={{cursor:"pointer" ,backgroundColor:'#ADD8E6', height:400, borderRadius:4}} src={require("../assets/images/image.png")} />
+            <img style={{cursor:"pointer" ,backgroundColor:'#ADD8E6', height:400, borderRadius:4}} src="/assets/images/image.png" />
 
             </Card>
                   

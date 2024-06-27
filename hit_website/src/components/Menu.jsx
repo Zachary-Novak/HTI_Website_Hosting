@@ -11,17 +11,12 @@ const Menu = () => {
   return (
     <Container>
       <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-        <Link
-          to="/"
-          className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
-          
-        >
+
           <strong style={{fontSize:24, color:"orange"}}>
-                  <img src={require("../assets/images/hti_logo_4.png")}/> 
+                  <img src={"../assets/images/hti_logo_4.png"}/> 
 
           WasedaConnect!
           </strong>
-        </Link>
 
         <Nav>
         <IoIosHome size={40} style={{marginRight:30}}/>
