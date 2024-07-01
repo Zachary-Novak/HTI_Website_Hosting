@@ -52,9 +52,8 @@ const Home = () => {
 
   let modalFooter = <Modal.Footer>
   <Button variant="secondary" onClick={handleClose}>
-    English
+    Start
   </Button>
-  <Button variant="secondary">日本語</Button>
 </Modal.Footer>
 
   if ((!firstClickSuccess && hasClosedModal) || firstClickSuccess && !secondClickSuccess) {
@@ -73,8 +72,6 @@ const Home = () => {
       <Modal
         show={show}
         onHide={handleClose}
-        backdrop="static"
-        keyboard={false}
       >
         <Modal.Header closeButton>
           <Modal.Title>Modal title</Modal.Title>
