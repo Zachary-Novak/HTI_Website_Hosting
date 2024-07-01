@@ -1,4 +1,3 @@
-import Header from '../components/Header'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -6,6 +5,7 @@ import { useEffect, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { useNavigate } from "react-router-dom";
+import Menu from '../components/Menu';
 
 const Home = () => {
   // page content
@@ -13,7 +13,7 @@ const Home = () => {
   const pageDescription = 'welcome to react bootstrap template'
   const [show, setShow] = useState(true);
 
-  const [modalText, setModalText] = useState("Welcome to the site. Please Choose your native language.ようこそ 母国語を選択してください。");
+  const [modalText, setModalText] = useState("Welcome to the site. Please find the hidden survey link。");
 
   const [hasClosedModal, setHasClosedModal] = useState(false);
   const [firstClickSuccess, setFirstClickSuccess] = useState(false)
@@ -65,6 +65,7 @@ const Home = () => {
 
   return (
     <div>
+      <Menu/>
 
       <Modal
         show={show}

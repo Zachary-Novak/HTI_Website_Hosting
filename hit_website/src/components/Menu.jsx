@@ -23,7 +23,7 @@ const Menu = () => {
         <FaRegCalendarDays size={40} style={{marginRight:30}}/>
 
           
-        <ul style={{marginRight:200, width:300}} className="nav ">
+        <ul style={{marginRight:100, width:200}} className="nav ">
         <InputGroup>
         <Form.Control disabled={true}
                                 type="text"

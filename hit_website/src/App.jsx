@@ -1,23 +1,27 @@
 import { Container } from "react-bootstrap";
 import { Routes, Route } from "react-router-dom";
 
-// Layout
-import Layout from "./layout/Layout";
-
 // pages
 import Home from "./pages/Home";
 import Survey from "./pages/Survey";
 
+import JpHome from "./japanese/pages/JpHome";
+import JpAbout from "./japanese/pages/JpAbout";
+
+
+
 const App = () => {
   return (
-    <Layout>
       <Container>
         <Routes>
           <Route path="/" element={<Home />} exact />
           <Route path="/survey" element={<Survey />} />
+          <Route path="/jp" element={<JpHome />} />
+          <Route path="/jpabout" element={<JpAbout />} />
+
         </Routes>
+
       </Container>
-    </Layout>
   );
 };
 
