@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Button, Card, ProgressBar } from 'react-bootstrap';
-import { useLocation} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import posthog from 'posthog-js'
 
 const Survey = () => {
-  const [answers, setAnswers] = useState({});
+  const [answers, setAnswers] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [isCompleted, setIsCompleted] = useState(false);
 
@@ -11,6 +12,16 @@ const Survey = () => {
 
   const [misclickCount, setMisclickCount] = useState(0);
   const [siteVersion, setSiteVersion] = useState("American")
+
+  useEffect(() => {
+    posthog.init('phc_iBF0PfaKlfplDqP63pRgv1Or8eOxB6GmydTuYXq8HMb',
+      {
+        api_host: 'https://us.i.posthog.com',
+        person_profiles: 'identified_only' // or 'always' to create profiles for anonymous users as well
+      }
+    )
+
+  }, []);
 
   useEffect(() => {
     // Check if state exists and has a count property
@@ -43,35 +54,45 @@ const Survey = () => {
   ];
 
   const handleAnswer = (answer) => {
-    setAnswers({
-      ...answers,
-      [questions[currentQuestion].id]: answer
-    });
-
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      handleSubmit();
+      handleSubmit([...answers, answer]);
     }
+
+    setAnswers(answers => [
+      ...answers, answer
+    ]);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (answers) => {
     console.log("Survey answers:", answers);
     setIsCompleted(true);
 
-    // TODO: Implement POST request
-    
-    // fetch('https://api.example.com/survey', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(answers),
-    // })
-    //   .then(response => response.json())
-    //   .then(data => console.log('Success:', data))
-    //   .catch((error) => console.error('Error:', error));
-    
+
+    const surveyData = {
+      answers,
+      currentQuestion,
+      isCompleted: true,
+      misclickCount,
+      siteVersion
+    };
+
+    // Send data to PostHog
+    posthog.capture('Survey Completed', surveyData);
+
+    // Send data via POST request
+    fetch('https://3pn2cncibc.execute-api.ap-northeast-1.amazonaws.com/default/testFunction', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(surveyData),
+    })
+      .then(response => response.json())
+      .then(data => console.log('POST request success:', data))
+      .catch((error) => console.error('POST request error:', error));
+
   };
 
   if (isCompleted) {
