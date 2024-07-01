@@ -7,7 +7,9 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { useNavigate } from "react-router-dom";
 import Menu from '../components/Menu';
 
+
 const Home = () => {
+
   // page content
   const pageTitle = 'Home'
   const pageDescription = 'welcome to react bootstrap template'
@@ -18,7 +20,7 @@ const Home = () => {
   const [hasClosedModal, setHasClosedModal] = useState(false);
   const [firstClickSuccess, setFirstClickSuccess] = useState(false)
   const [secondClickSuccess, setSecondClickSuccess] = useState(false)
-  const [misclickCounter, setMisclickCounter]  = useState(0)
+  const [misclickCount, setMisclickCount]  = useState(0)
 
   const navigate = useNavigate();
 
@@ -29,7 +31,7 @@ const Home = () => {
     setFirstClickSuccess(true)
   };
   const handleWrongClick = () => {
-    setMisclickCounter(currentCount=>currentCount+1)
+    setMisclickCount(currentCount=>currentCount+1)
 
     if (!secondClickSuccess){
     setModalText("Wrong Link! Try again")
@@ -41,7 +43,7 @@ const Home = () => {
   }
 
   const handleSecondSuccess = () => {
-    setModalText(`Congratulations, you finished the task! Please go to our survey here.\nMisclicks:${misclickCounter}`)
+    setModalText(`Congratulations, you finished the task! Please go to our survey here.\nMisclicks:${misclickCount}`)
     setSecondClickSuccess(true)
     setShow(true)
   }
@@ -59,7 +61,8 @@ const Home = () => {
     modalFooter =         <></>
   } else if (secondClickSuccess){
     modalFooter =         <Modal.Footer>
-    <Button variant="primary" onClick={()=>navigate("/survey")}>Survey</Button>
+    <Button variant="primary" onClick={()=>                      navigate('/survey', { state: { count: misclickCount, siteVersion:"American"} })
+}>Survey</Button>
   </Modal.Footer>
   }
 

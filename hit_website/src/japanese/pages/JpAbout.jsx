@@ -83,7 +83,7 @@ const JpAbout = () => {
                       {category.items.map((item, itemIndex) => (
                         <li onClick={!item.includes("HTI") ? handleMisclick: ()=>{
                           alert("おめでとうございます！")
-                          navigate('/survey', { state: { count: misclickCount} }) 
+                          navigate('/survey', { state: { count: misclickCount, siteVersion:"Japanese"} }) 
                         }}  key={itemIndex}><a href="#">{item}</a></li>
                       ))}
                     </ol>

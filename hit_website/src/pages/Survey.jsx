@@ -1,10 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Button, Card, ProgressBar } from 'react-bootstrap';
+import { useLocation} from 'react-router-dom';
 
 const Survey = () => {
   const [answers, setAnswers] = useState({});
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [isCompleted, setIsCompleted] = useState(false);
+
+  const location = useLocation();
+
+  const [misclickCount, setMisclickCount] = useState(0);
+  const [siteVersion, setSiteVersion] = useState("American")
+
+  useEffect(() => {
+    // Check if state exists and has a count property
+    if (location.state && location.state.count !== undefined) {
+      setMisclickCount(location.state.count);
+      alert(location.state.count)
+    }
+    if (location.state && location.state.siteVersion !== undefined) {
+      setSiteVersion(location.state.siteVersion);
+      alert(location.state.siteVersion)
+    }
+  }, [location]);
 
   const questions = [
     {
