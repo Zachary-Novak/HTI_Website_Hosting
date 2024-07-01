@@ -38,18 +38,23 @@ const Survey = () => {
   const questions = [
     {
       id: 1,
-      question: "How satisfied are you with our product?",
-      options: ["Very Satisfied", "Satisfied", "Neutral", "Dissatisfied", "Very Dissatisfied"]
+      question: "How would you rate your overall experience on the website? (1 = Not satisified, 5 = Very satisified)",
+      options: ["1","2","3","4","5"]
     },
     {
       id: 2,
-      question: "How likely are you to recommend our product to others?",
-      options: ["Very Likely", "Likely", "Neutral", "Unlikely", "Very Unlikely"]
+      question: "How easy was it to navigate through the website and accomplish your task? (1 = Not satisified, 5 = Very satisified)",
+      options: ["1","2","3","4","5"]
     },
     {
       id: 3,
-      question: "How often do you use our product?",
-      options: ["Daily", "Weekly", "Monthly", "Rarely", "Never"]
+      question: "How visually appealing did you find the website's design? (1 = Not satisified, 5 = Very satisified)",
+      options: ["1","2","3","4","5"]
+    },
+    {
+      id: 4,
+      question: "How intuitive was the layout and structure of the website? (1 = Not satisified, 5 = Very satisified)",
+      options: ["1","2","3","4","5"]
     }
   ];
 
@@ -127,7 +132,7 @@ const Survey = () => {
           <Card.Text className="mb-4">{currentQuestionData.question}</Card.Text>
           <Row>
             {currentQuestionData.options.map((option, index) => (
-              <Col key={index} xs={12} sm={6} md={4} lg={3} className="mb-3">
+              <Col key={index} >
                 <Button
                   variant="outline-primary"
                   block
