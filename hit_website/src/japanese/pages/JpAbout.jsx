@@ -20,6 +20,11 @@ const JpAbout = () => {
     }
   }, [location]);
 
+  useEffect(() => {
+    // Run on initial render
+    alert("タスク２：「日本のウエブサイトのレイアウトについて（HTI）のアンケート」を見つけてください！")
+  }, []);
+
   const handleMisclick = () => {
     setMisclickCount(prevCount => prevCount + 1);
     alert(`ミス数: ${misclickCount + 1}`);
