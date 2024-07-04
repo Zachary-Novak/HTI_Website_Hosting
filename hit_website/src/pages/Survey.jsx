@@ -105,13 +105,8 @@ const Survey = () => {
           <Card.Body>
             <Card.Title as="h2" className="text-center mb-4">Congratulations!</Card.Title>
             <Card.Text className="text-center">
-              Thank you for completing our survey. Your feedback is valuable to us!
+              Thank you for completing our survey. Your survey has been submitted. You may close this site now.
             </Card.Text>
-            <div className="text-center">
-              <Button variant="primary" onClick={() => window.location.reload()}>
-                Take Another Survey
-              </Button>
-            </div>
           </Card.Body>
         </Card>
       </Container>
