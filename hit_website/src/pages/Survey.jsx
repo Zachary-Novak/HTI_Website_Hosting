@@ -27,11 +27,9 @@ const Survey = () => {
     // Check if state exists and has a count property
     if (location.state && location.state.count !== undefined) {
       setMisclickCount(location.state.count);
-      alert(location.state.count)
     }
     if (location.state && location.state.siteVersion !== undefined) {
       setSiteVersion(location.state.siteVersion);
-      alert(location.state.siteVersion)
     }
   }, [location]);
 
