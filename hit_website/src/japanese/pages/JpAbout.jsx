@@ -50,7 +50,7 @@ const JpAbout = () => {
     { title: 'パーソナルデベロップメント', items: ['自己啓発のための活動とその効果についてのアンケート', 'モチベーションの維持方法とその成功体験に関するアンケート', '効果的なタイムマネジメント方法に関するアンケート'] }
   ];
 
-  const adImages = [beerImage, babyImage, jamImage, yamaImage];
+  const adImages = [babyImage, jamImage, yamaImage];
 
   return (
     <Container>
