@@ -50,9 +50,9 @@ const Menu = () => {
                   </Row>
              
                     
-                    <h1 style={{fontSize: 82, color: '#d31414', fontWeight: 800, textDecorationStyle: 'dashed' ,textAlign:'center', position: 'absolute', top: 130, left: 610}}>わせコン</h1>
+                    <h1 style={{fontSize: 82, color: '#d31414', fontWeight: 800, textDecorationStyle: 'dashed' ,textAlign:'center', position: 'absolute', top: 120, left: 510}}>わせコン</h1>
 
-                  <Card style={{position: 'absolute', top: 240, right: 320, width: 900, padding: 10, backgroundColor: '#BECCEA'}}>
+                  <Card style={{position: 'absolute', top: 240, right: 200, width: 900, padding: 10, backgroundColor: '#BECCEA'}}>
                     <Card.Body>
                     <Form inline>
                           <Row style={{justifyContent: 'center'}}>
