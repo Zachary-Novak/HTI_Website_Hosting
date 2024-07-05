@@ -15,7 +15,7 @@ const Home = () => {
   const pageDescription = 'welcome to react bootstrap template'
   const [show, setShow] = useState(true);
 
-  const [modalText, setModalText] = useState("Welcome to the site. Please find the hidden survey link。");
+  const [modalText, setModalText] = useState('Your first task is: find the “Student Surveys” Section');
 
   const [hasClosedModal, setHasClosedModal] = useState(false);
   const [firstClickSuccess, setFirstClickSuccess] = useState(false)
@@ -26,7 +26,7 @@ const Home = () => {
 
   const handleClose = () => { setShow(false); setHasClosedModal(true) };
   const handleFirstSuccess = () => {
-    setModalText("You found the hidden survey link! Now for the final task, find the true survey link")
+    setModalText('You found the first hidden survey link! Now for the final task, find "HTI Survey"')
     setShow(true)
     setFirstClickSuccess(true)
   };
@@ -74,7 +74,7 @@ const Home = () => {
         onHide={handleClose}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Task</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {modalText}
@@ -157,8 +157,8 @@ const Home = () => {
             <InputGroup>
         <Form.Control
         disabled={true}
-          placeholder="Your first task is: find the “Student Surveys” Section"
-          aria-label="Your first task is: find the “Student Surveys” Section"
+          placeholder={modalText}
+          aria-label={modalText}
           aria-describedby="basic-addon2"
         />
         <Button variant="success" id="button-addon2">

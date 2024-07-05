@@ -27,11 +27,9 @@ const Survey = () => {
     // Check if state exists and has a count property
     if (location.state && location.state.count !== undefined) {
       setMisclickCount(location.state.count);
-      alert(location.state.count)
     }
     if (location.state && location.state.siteVersion !== undefined) {
       setSiteVersion(location.state.siteVersion);
-      alert(location.state.siteVersion)
     }
   }, [location]);
 
@@ -107,13 +105,8 @@ const Survey = () => {
           <Card.Body>
             <Card.Title as="h2" className="text-center mb-4">Congratulations!</Card.Title>
             <Card.Text className="text-center">
-              Thank you for completing our survey. Your feedback is valuable to us!
+              Thank you for completing our survey. Your survey has been submitted. You may close this site now.
             </Card.Text>
-            <div className="text-center">
-              <Button variant="primary" onClick={() => window.location.reload()}>
-                Take Another Survey
-              </Button>
-            </div>
           </Card.Body>
         </Card>
       </Container>

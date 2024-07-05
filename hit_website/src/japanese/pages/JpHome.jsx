@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -69,6 +69,12 @@ const JpHome = () => {
   ];
 
 
+  useEffect(() => {
+    // Run on initial render
+    alert("最初のタスク：アンケートの場所を見つけてください！")
+  }, []);
+
+
 
   return (
     <div>
@@ -95,7 +101,7 @@ const JpHome = () => {
                 <div className="row">
                   <div style={{ backgroundColor: '#9EB4DB', padding: 20 }} className="col-sm-12">
                     {["主要", "経済", "スポーツ", "科学"].map((category, index) => (
-                      <Button key={index} style={{ marginRight: 20 }} variant="light">{category}</Button>
+                      <Button　onClick={handleMisclick}　 key={index} style={{ marginRight: 20 }} variant="light">{category}</Button>
                     ))}
                   </div>
                 </div>
@@ -103,7 +109,7 @@ const JpHome = () => {
                 <div style={{ marginTop: 20 }} className="row">
                   <ul>
                     {newsItems.map((item, index) => (
-                      <li key={index}><a href="#">{item}</a></li>
+                      <li onClick={handleMisclick} key={index}><a href="#">{item}</a></li>
                     ))}
                   </ul>
                 </div>
@@ -117,13 +123,13 @@ const JpHome = () => {
                     <div className="col-3">
                       <Card>
                         <Card.Body>
-                          <img style={{ width: 150, height: 150 }} src={event.img} alt={`img${index + 1}`} />
+                          <img onClick={handleMisclick} style={{ width: 150, height: 150 }} src={event.img} alt={`img${index + 1}`} />
                         </Card.Body>
                       </Card>
                     </div>
                     <div className="col-9">
                       <Card>
-                        <Card.Body>
+                        <Card.Body onClick={handleMisclick}>
                           <a href="#" style={{ fontSize: 20 }}>{event.title}</a>
                           <p style={{ color: '#828282', fontSize: 20, marginTop: 15 }}>{event.description}</p>
                         </Card.Body>
@@ -136,7 +142,7 @@ const JpHome = () => {
           </div>
 
           <div style={{ marginTop: 20 }} className="col-2">
-            <Card>
+            <Card onClick={handleMisclick}>
               <Card.Body>
                 <Form>
                   <Form.Group className="mb-3" controlId="formGroupEmail">

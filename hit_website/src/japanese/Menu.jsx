@@ -20,31 +20,31 @@ const Menu = () => {
              
                   <Row style={{top: 0, position: 'absolute', alignContent: 'center'}}>
                       <Col className="square border border-dark" style={{backgroundColor: '#D9D9D9', padding: 10, width: 250}} xs={6} md={3}>
-                        <a style={{color: 'black'}} href="/"><p style={{ textAlign: 'center', marginBottom: 0}}>連絡</p></a> 
+                        <a style={{color: 'black'}} href="#"><p style={{ textAlign: 'center', marginBottom: 0}}>連絡</p></a> 
                       </Col>
                       <Col className="square border border-dark" style={{backgroundColor: '#D9D9D9', padding: 10, width: 250}} xs={6} md={3}>
-                        <a style={{color: 'black'}} href="/"><p style={{ textAlign: 'center', marginBottom: 0}}>サイト詳し</p></a> 
+                        <a style={{color: 'black'}} href="#"><p style={{ textAlign: 'center', marginBottom: 0}}>サイト詳し</p></a> 
                       </Col>
                       <Col className="square border border-dark" style={{backgroundColor: '#D9D9D9', padding: 10, width: 250}} xs={6} md={3}>
-                      <a style={{color: 'black'}} href="/"><p style={{ textAlign: 'center', marginBottom: 0}}>外部サイト</p></a> 
+                      <a style={{color: 'black'}} href="#"><p style={{ textAlign: 'center', marginBottom: 0}}>外部サイト</p></a> 
                       </Col>
                       <Col className="square border border-dark" style={{backgroundColor: '#D9D9D9', padding: 10, width: 250}} xs={6} md={3}>
-                      <a style={{color: 'black'}} href="/"><p style={{ textAlign: 'center', marginBottom: 0}}>国内案内</p></a> 
+                      <a style={{color: 'black'}} href="#"><p style={{ textAlign: 'center', marginBottom: 0}}>国内案内</p></a> 
                       </Col>
                   </Row>
 
                   <Row style={{top: 45, position: 'absolute', alignContent: 'center'}}>
                       <Col className="square border border-dark" style={{backgroundColor: '#D9D9D9', padding: 10, width: 250}} xs={6} md={3}>
-                        <a style={{color: 'black'}} href="/"><p style={{ textAlign: 'center', marginBottom: 0}}>わせコン社</p></a> 
+                        <a style={{color: 'black'}} href="#"><p style={{ textAlign: 'center', marginBottom: 0}}>わせコン社</p></a> 
                       </Col>
                       <Col className="square border border-dark" style={{backgroundColor: '#D9D9D9', padding: 10, width: 250}} xs={6} md={3}>
-                        <a style={{color: 'black'}} href="/"><p style={{ textAlign: 'center', marginBottom: 0}}>広告商品</p></a> 
+                        <a style={{color: 'black'}} href="#"><p style={{ textAlign: 'center', marginBottom: 0}}>広告商品</p></a> 
                       </Col>
                       <Col className="square border border-dark" style={{backgroundColor: '#D9D9D9', padding: 10, width: 250}} xs={6} md={3}>
-                      <a style={{color: 'black'}} href="/"><p style={{ textAlign: 'center', marginBottom: 0}}>会社</p></a> 
+                      <a style={{color: 'black'}} href="#"><p style={{ textAlign: 'center', marginBottom: 0}}>会社</p></a> 
                       </Col>
                       <Col className="square border border-dark" style={{backgroundColor: '#D9D9D9', padding: 10, width: 250}} xs={6} md={3}>
-                      <a style={{color: 'black'}} href="/"><p style={{ textAlign: 'center', marginBottom: 0}}>建設株式会社</p></a> 
+                      <a style={{color: 'black'}} href="#"><p style={{ textAlign: 'center', marginBottom: 0}}>建設株式会社</p></a> 
                       </Col>
                                           
                   </Row>
@@ -64,7 +64,7 @@ const Menu = () => {
                               />
                             </Col>
                             <Col xs="auto">
-                              <Button type="submit">検索</Button>
+                              <Button>検索</Button>
                             </Col>
                           </Row>
                       </Form> 
