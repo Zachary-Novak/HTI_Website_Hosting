@@ -84,8 +84,7 @@ const Home = () => {
 
       <div class="container">
         <div class="row">
-          <div class="col-2">
-
+    <div className="col-12 col-md-2">
             
             <Card style={{ "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)", marginBottom:20}}>
               <Card.Body>
@@ -151,8 +150,7 @@ const Home = () => {
 
             </Card>
           </div>
-          <div class="col-7">
-
+    <div className="col-12 col-md-7">
             <Card style={{ "padding":20, marginBottom:20, "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"}}>
             <InputGroup>
         <Form.Control
@@ -185,8 +183,7 @@ const Home = () => {
                   )}
           </div>
 
-          <div class="col-3">
-
+    <div className="col-12 col-md-3">
             
 
                     <Card onClick={handleWrongClick} style={{ "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)", marginBottom:20}}>
