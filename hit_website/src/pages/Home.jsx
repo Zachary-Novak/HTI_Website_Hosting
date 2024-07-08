@@ -21,10 +21,16 @@ const Home = () => {
   const [firstClickSuccess, setFirstClickSuccess] = useState(false)
   const [secondClickSuccess, setSecondClickSuccess] = useState(false)
   const [misclickCount, setMisclickCount]  = useState(0)
+  const [time, setTime] = useState(0);
 
   const navigate = useNavigate();
 
-  const handleClose = () => { setShow(false); setHasClosedModal(true) };
+  const handleClose = () => { 
+    setShow(false); setHasClosedModal(true)
+    if (time === 0) {
+      setInterval(()=>{setTime(time=>time+1)},1000)
+    }
+   };
   const handleFirstSuccess = () => {
     setModalText('You found the first hidden survey link! Now for the final task, find "HTI Survey"')
     setShow(true)
@@ -60,7 +66,7 @@ const Home = () => {
     modalFooter =         <></>
   } else if (secondClickSuccess){
     modalFooter =         <Modal.Footer>
-    <Button variant="primary" onClick={()=>                      navigate('/survey', { state: { count: misclickCount, siteVersion:"American"} })
+    <Button variant="primary" onClick={()=>                      navigate('/survey', { state: { time, count: misclickCount, siteVersion:"American"} })
 }>Survey</Button>
   </Modal.Footer>
   }

@@ -12,6 +12,8 @@ const Survey = () => {
 
   const [misclickCount, setMisclickCount] = useState(0);
   const [siteVersion, setSiteVersion] = useState("American")
+  const [time, setTime] = useState(0);
+
 
   useEffect(() => {
     // Check if state exists and has a count property
@@ -20,6 +22,9 @@ const Survey = () => {
     }
     if (location.state && location.state.siteVersion !== undefined) {
       setSiteVersion(location.state.siteVersion);
+    }
+    if (location.state && location.state.time !== undefined) {
+      setTime(location.state.time);
     }
   }, [location]);
 
@@ -68,7 +73,8 @@ const Survey = () => {
       currentQuestion,
       isCompleted: true,
       misclickCount,
-      siteVersion
+      siteVersion,
+      time:time.toString()
     };
 
     // Send data via POST request

@@ -22,9 +22,11 @@ const JpHome = () => {
   const pageTitle = 'Home';
   const pageDescription = 'Welcome to the React Bootstrap template';
   const [misclickCount, setMisclickCount] = useState(0);
+  const [time, setTime] = useState(0);
+
   const handleMisclick = () => {
     setMisclickCount(prevCount => prevCount + 1);
-    alert(`ミス数: ${misclickCount + 1}`);
+    alert(`ミス数: ${misclickCount + 1}, time: ${time}`);
   
 };
   const links = [
@@ -71,7 +73,8 @@ const JpHome = () => {
 
   useEffect(() => {
     // Run on initial render
-    alert("最初のタスク：アンケートの場所を見つけてください！")
+    confirm("最初のタスク：アンケートの場所を見つけてください！")
+    setInterval(()=>{setTime(time=>time+1)},1000)
   }, []);
 
 
@@ -79,6 +82,7 @@ const JpHome = () => {
   return (
     <div>
       <Menu/>
+      <h1>{time}</h1>
       <div className="container">
         <div className="row">
           <div className="col-2">
@@ -88,7 +92,7 @@ const JpHome = () => {
                   {links.map((link, index) => (
                    
                     <li key={index} style={{ marginBottom: 20 }} onClick={link.text !== "アンケート" ? handleMisclick: ()=>{
-                      navigate('/jpabout', { state: { count: misclickCount} });
+                      navigate('/jpabout', { state: { time,count: misclickCount} });
                     }}><a  href={link.href} >{link.text}</a></li>
                   ))}
                 </ul>

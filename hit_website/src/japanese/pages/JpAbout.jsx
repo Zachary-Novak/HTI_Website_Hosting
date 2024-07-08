@@ -12,22 +12,26 @@ const JpAbout = () => {
   const navigate = useNavigate();
 
   const [misclickCount, setMisclickCount] = useState(0);
+  const [time, setTime] = useState(0);
+
 
   useEffect(() => {
     // Check if state exists and has a count property
     if (location.state && location.state.count !== undefined) {
       setMisclickCount(location.state.count);
+      setTime(location.state.time)
     }
   }, [location]);
 
   useEffect(() => {
     // Run on initial render
-    alert("タスク２：「日本のウエブサイトのレイアウトについて（HTI）のアンケート」を見つけてください！")
+    confirm("タスク２：「日本のウエブサイトのレイアウトについて（HTI）のアンケート」を見つけてください！")
+    setInterval(()=>{setTime(time=>time+1)},1000)
   }, []);
 
   const handleMisclick = () => {
     setMisclickCount(prevCount => prevCount + 1);
-    alert(`ミス数: ${misclickCount + 1}`);
+    alert(`ミス数: ${misclickCount + 1} time: ${time}`);
 
 };
 
@@ -88,7 +92,7 @@ const JpAbout = () => {
                       {category.items.map((item, itemIndex) => (
                         <li onClick={!item.includes("HTI") ? handleMisclick: ()=>{
                           alert("おめでとうございます！")
-                          navigate('/survey', { state: { count: misclickCount, siteVersion:"Japanese"} }) 
+                          navigate('/survey', { state: { time, count: misclickCount, siteVersion:"Japanese"} }) 
                         }}  key={itemIndex}><a href="#">{item}</a></li>
                       ))}
                     </ol>
