@@ -14,16 +14,6 @@ const Survey = () => {
   const [siteVersion, setSiteVersion] = useState("American")
 
   useEffect(() => {
-    posthog.init('phc_iBF0PfaKlfplDqP63pRgv1Or8eOxB6GmydTuYXq8HMb',
-      {
-        api_host: 'https://us.i.posthog.com',
-        person_profiles: 'identified_only' // or 'always' to create profiles for anonymous users as well
-      }
-    )
-
-  }, []);
-
-  useEffect(() => {
     // Check if state exists and has a count property
     if (location.state && location.state.count !== undefined) {
       setMisclickCount(location.state.count);
@@ -81,11 +71,8 @@ const Survey = () => {
       siteVersion
     };
 
-    // Send data to PostHog
-    posthog.capture('Survey Completed', surveyData);
-
     // Send data via POST request
-    fetch('https://3pn2cncibc.execute-api.ap-northeast-1.amazonaws.com/default/testFunction', {
+    fetch('/default/testFunction', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
