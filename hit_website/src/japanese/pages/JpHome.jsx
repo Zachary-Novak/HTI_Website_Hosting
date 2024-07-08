@@ -82,7 +82,6 @@ const JpHome = () => {
   return (
     <div>
       <Menu/>
-      <h1>{time}</h1>
       <div className="container">
         <div className="row">
           <div className="col-2">
@@ -93,7 +92,7 @@ const JpHome = () => {
                    
                     <li key={index} style={{ marginBottom: 20 }} onClick={link.text !== "アンケート" ? handleMisclick: ()=>{
                       navigate('/jpabout', { state: { time,count: misclickCount} });
-                    }}><a  href={link.href} >{link.text}</a></li>
+                    }}><a  href="javascript:void(0)" >{link.text}</a></li>
                   ))}
                 </ul>
               </Card.Body>
@@ -113,7 +112,7 @@ const JpHome = () => {
                 <div style={{ marginTop: 20 }} className="row">
                   <ul>
                     {newsItems.map((item, index) => (
-                      <li onClick={handleMisclick} key={index}><a href="#">{item}</a></li>
+                      <li onClick={handleMisclick} key={index}><a href="javascript:void(0)">{item}</a></li>
                     ))}
                   </ul>
                 </div>
@@ -134,7 +133,7 @@ const JpHome = () => {
                     <div className="col-9">
                       <Card>
                         <Card.Body onClick={handleMisclick}>
-                          <a href="#" style={{ fontSize: 20 }}>{event.title}</a>
+                          <a href="javascript:void(0)" style={{ fontSize: 20 }}>{event.title}</a>
                           <p style={{ color: '#828282', fontSize: 20, marginTop: 15 }}>{event.description}</p>
                         </Card.Body>
                       </Card>

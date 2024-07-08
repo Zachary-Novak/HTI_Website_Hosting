@@ -66,7 +66,7 @@ const JpAbout = () => {
             <Card.Body>
               {sidebarLinks.map((link, index) => (
                 <li onClick={handleMisclick} key={index} style={{listStyleImage: '🌐 ', marginBottom: 20}}>
-                  <a href="#">{link}</a>
+                  <a href="javascript:void(0)">{link}</a>
                 </li>
               ))}
             </Card.Body>
@@ -87,13 +87,13 @@ const JpAbout = () => {
               <Row style={{marginTop: 20}}>
                 {categories.map((category, index) => (
                   <React.Fragment key={index}>
-                    <li onClick={handleMisclick} ><a href="#">{category.title}</a></li>
+                    <li onClick={handleMisclick} ><a href="javascript:void(0)">{category.title}</a></li>
                     <ol style={{listStyleType: 'lower-alpha', marginLeft: 50}}>
                       {category.items.map((item, itemIndex) => (
                         <li onClick={!item.includes("HTI") ? handleMisclick: ()=>{
                           alert("おめでとうございます！")
                           navigate('/survey', { state: { time, count: misclickCount, siteVersion:"Japanese"} }) 
-                        }}  key={itemIndex}><a href="#">{item}</a></li>
+                        }}  key={itemIndex}><a href="javascript:void(0)">{item}</a></li>
                       ))}
                     </ol>
                   </React.Fragment>
