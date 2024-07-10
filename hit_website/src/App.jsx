@@ -8,6 +8,7 @@ import Survey from "./pages/Survey";
 
 import JpHome from "./japanese/pages/JpHome";
 import JpAbout from "./japanese/pages/JpAbout";
+import Export from "./pages/Export";
 
 const Random = () => {
   const navigate = useNavigate();
@@ -27,6 +28,8 @@ const App = () => {
           <Route path="/survey" element={<Survey />} />
           <Route path="/jp" element={<JpHome />} />
           <Route path="/jpabout" element={<JpAbout />} />
+
+          <Route path="/export" element={<Export />} />
 
           <Route path="/random" element={<Random />} />
 
