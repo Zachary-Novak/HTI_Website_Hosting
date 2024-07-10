@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import { Container, NavItem } from "react-bootstrap";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import React, { useEffect } from 'react';
 
@@ -41,6 +41,27 @@ const Random = () => {
 };
 
 const App = () => {
+  console.log(navigator)
+
+  /*
+
+  Here is the code:
+
+  ________________________________________
+  
+  let language_choice = "english"
+
+  if (navigator.languages.includes("ja") || navigator.languages.includes("ja-JP")) {
+    language_choice = "japanese"
+  } 
+  
+  _________________________________________
+
+
+  if language_choice equals english, then its supposed to be in english. If 
+  it equals japanese, then its supposed to be in Japanese*/
+
+
   return (
       <Container>
         <Routes>
