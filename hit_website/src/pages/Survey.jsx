@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Button, Card, ProgressBar } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
-import posthog from 'posthog-js'
-
+import { db } from '../Firebase';
+import { collection, addDoc, getDocs } from 'firebase/firestore';
 const Survey = () => {
   const [answers, setAnswers] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -63,31 +63,37 @@ const Survey = () => {
     ]);
   };
 
-  const handleSubmit = (answers) => {
+  const handleSubmit = async (answers) => {
     console.log("Survey answers:", answers);
     setIsCompleted(true);
 
 
     const surveyData = {
       answers,
-      currentQuestion,
-      isCompleted: true,
       misclickCount,
       siteVersion,
       time:time.toString()
     };
 
-    // Send data via POST request
-    fetch('/default/testFunction', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(surveyData),
-    })
-      .then(response => response.json())
-      .then(data => console.log('POST request success:', data))
-      .catch((error) => console.error('POST request error:', error));
+    try {
+      const docRef = await addDoc(collection(db, "survey"), surveyData);
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+
+
+    // // Send data via POST request
+    // fetch('https://3pn2cncibc.execute-api.ap-northeast-1.amazonaws.com/default/testFunction', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(surveyData),
+    // })
+    //   .then(response => response.json())
+    //   .then(data => console.log('POST request success:', data))
+    //   .catch((error) => console.error('POST request error:', error));
 
   };
 
