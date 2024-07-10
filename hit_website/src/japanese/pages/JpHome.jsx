@@ -19,8 +19,6 @@ const JpHome = () => {
 
   const navigate = useNavigate();
 
-  const pageTitle = 'Home';
-  const pageDescription = 'Welcome to the React Bootstrap template';
   const [misclickCount, setMisclickCount] = useState(0);
   const [time, setTime] = useState(0);
 
@@ -30,19 +28,19 @@ const JpHome = () => {
   
 };
   const links = [
-    { text: "ショッピング", href: "#" }, { text: "ニュース", href: "#" }, 
-    { text: "マップ", href: "#" }, { text: "天気", href: "#" }, 
-    { text: "災害", href: "#" }, { text: "ファション", href: "#" }, 
-    { text: "番組", href: "#" }, { text: "ボクシング", href: "#" }, 
-    { text: "旅行", href: "#" }, { text: "ドラマ", href: "#" }, 
-    { text: "ガチャ", href: "#" }, { text: "ファイナンス", href: "#" }, 
-    { text: "ゲーム", href: "#" }, { text: "アンケート", href: "#" }, 
-    { text: "掲示板", href: "#" }, { text: "天気", href: "#" },
-    { text: "知恵袋", href: "#" }, { text: "占い", href: "#" }, 
-    { text: "カレンダー", href: "#" }, { text: "宝くじ", href: "#" }, 
-    { text: "オークション", href: "#" }, { text: "海外ニュース", href: "#" }, 
-    { text: "音楽", href: "#" }, { text: "映画", href: "#" }, 
-    { text: "漫画", href: "#" }, { text: "アニメ", href: "#" }
+    { text: "ショッピング", href: "javascript:void(0)" }, { text: "ニュース", href: "javascript:void(0)" }, 
+    { text: "マップ", href: "javascript:void(0)" }, { text: "天気", href: "javascript:void(0)" }, 
+    { text: "災害", href: "javascript:void(0)" }, { text: "ファション", href: "javascript:void(0)" }, 
+    { text: "番組", href: "javascript:void(0)" }, { text: "ボクシング", href: "javascript:void(0)" }, 
+    { text: "旅行", href: "javascript:void(0)" }, { text: "ドラマ", href: "javascript:void(0)" }, 
+    { text: "ガチャ", href: "javascript:void(0)" }, { text: "ファイナンス", href: "javascript:void(0)" }, 
+    { text: "ゲーム", href: "javascript:void(0)" }, { text: "アンケート", href: "javascript:void(0)" }, 
+    { text: "掲示板", href: "javascript:void(0)" }, { text: "天気", href: "javascript:void(0)" },
+    { text: "知恵袋", href: "javascript:void(0)" }, { text: "占い", href: "javascript:void(0)" }, 
+    { text: "カレンダー", href: "javascript:void(0)" }, { text: "宝くじ", href: "javascript:void(0)" }, 
+    { text: "オークション", href: "javascript:void(0)" }, { text: "海外ニュース", href: "javascript:void(0)" }, 
+    { text: "音楽", href: "javascript:void(0)" }, { text: "映画", href: "javascript:void(0)" }, 
+    { text: "漫画", href: "javascript:void(0)" }, { text: "アニメ", href: "javascript:void(0)" }
   ];
 
   const newsItems = [
@@ -102,7 +100,7 @@ const JpHome = () => {
             <Card style={{ marginTop: 20 }}>
               <Card.Body>
                 <div className="row">
-                  <div style={{ backgroundColor: '#9EB4DB', padding: 20 }} className="col-sm-12">
+                  <div style={{ backgroundColor: 'javascript:void(0)9EB4DB', padding: 20 }} className="col-sm-12">
                     {["主要", "経済", "スポーツ", "科学"].map((category, index) => (
                       <Button　onClick={handleMisclick}　 key={index} style={{ marginRight: 20 }} variant="light">{category}</Button>
                     ))}
@@ -134,7 +132,7 @@ const JpHome = () => {
                       <Card>
                         <Card.Body onClick={handleMisclick}>
                           <a href="javascript:void(0)" style={{ fontSize: 20 }}>{event.title}</a>
-                          <p style={{ color: '#828282', fontSize: 20, marginTop: 15 }}>{event.description}</p>
+                          <p style={{ color: 'javascript:void(0)828282', fontSize: 20, marginTop: 15 }}>{event.description}</p>
                         </Card.Body>
                       </Card>
                     </div>
