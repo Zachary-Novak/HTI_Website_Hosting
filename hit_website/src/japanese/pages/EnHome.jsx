@@ -11,7 +11,7 @@ import img5 from "../assets/image_12.png";
 import stonkImg from "../assets/stonk.png";
 import radImg from "../assets/rad.png";
 import yamaImg from "../assets/yama.png";
-import Menu from '../Menu';
+import MenuTranslated from '../MenuTranslated';
 import { useNavigate } from "react-router-dom";
 
 const ENHome = () => {
@@ -73,7 +73,7 @@ const ENHome = () => {
 
   return (
     <div>
-      <Menu />
+      <MenuTranslated />
       <div className="container">
         <div className="row">
           <div className="col-2">
@@ -82,7 +82,7 @@ const ENHome = () => {
                 <ul>
                   {links.map((link, index) => (
                     <li key={index} style={{ marginBottom: 20 }} onClick={link.text !== "Survey" ? handleMisclick : () => {
-                      navigate('/jpabout', { state: { time, count: misclickCount } });
+                      navigate('/jpabouttranslated', { state: { time, count: misclickCount } });
                     }}><a href="javascript:void(0)" >{link.text}</a></li>
                   ))}
                 </ul>

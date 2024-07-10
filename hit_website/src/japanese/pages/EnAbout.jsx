@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import babyImage from '../assets/baby.png';
 import jamImage from '../assets/jam.png';
 import yamaImage from '../assets/yama.png';
-import Menu from '../Menu';
+import MenuTranslated from '../MenuTranslated';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const EnAbout = () => {
@@ -55,7 +55,7 @@ const EnAbout = () => {
 
   return (
     <Container>
-      <Menu/>
+      <MenuTranslated/>
       <Row>
         <Col xs={2}>
           <Card style={{marginTop: 20}}>
