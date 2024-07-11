@@ -20,11 +20,11 @@ const Random = () => {
   useEffect(() => {
     const browserLanguage = navigator.language.toLowerCase();
     const isJapanese = browserLanguage.startsWith('ja');
-    const randomPath = Math.random() < 0.5 ? '/' : '/jp';
+    const randomPath = Math.random() < 0.5 ? '/us' : '/jp';
 
     if (isJapanese) {
-      if (randomPath === '/') {
-        navigate('/translated');
+      if (randomPath === '/us') {
+        navigate('/ustranslated');
       } else {
         navigate(randomPath);
       }
@@ -65,8 +65,8 @@ const App = () => {
   return (
       <Container>
         <Routes>
-          <Route path="/" element={<Home />} exact />
-          <Route path="/translated" element={< JapaneseTranslation/>} exact />
+          <Route path="/us" element={<Home />} exact />
+          <Route path="/ustranslated" element={< JapaneseTranslation/>} exact />
           <Route path="/survey" element={<Survey />} />
           <Route path="/jp" element={<JpHome />} />
           <Route path="/jptranslated" element={<EnHome />} />
@@ -76,7 +76,7 @@ const App = () => {
 
           <Route path="/export" element={<Export />} />
 
-          <Route path="/random" element={<Random />} />
+          <Route path="/" element={<Random />} />
 
         </Routes>
 
