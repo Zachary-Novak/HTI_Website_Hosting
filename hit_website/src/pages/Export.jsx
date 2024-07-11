@@ -28,7 +28,7 @@ const Export = () => {
     }
   };
 
-  const headers =  ['siteVersion', "timestamp", "time", "misclickCount", "answers"]
+  const headers =  ['siteVersion', "timestamp", "isSmallScreen", "time", "misclickCount", "answers"]
 
   return (
     <Container>

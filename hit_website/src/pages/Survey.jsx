@@ -73,7 +73,8 @@ const Survey = () => {
       misclickCount,
       siteVersion,
       time:time.toString(),
-      timestamp: Timestamp.fromDate(new Date())
+      timestamp: Timestamp.fromDate(new Date()),
+      isSmallScreen: window.innerWidth < 768
     };
 
     try {
