@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Button, Card, ProgressBar } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
 import { db } from '../Firebase';
-import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { collection, addDoc, getDocs, Timestamp } from 'firebase/firestore';
 const Survey = () => {
   const [answers, setAnswers] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -72,11 +72,12 @@ const Survey = () => {
       answers,
       misclickCount,
       siteVersion,
-      time:time.toString()
+      time:time.toString(),
+      timestamp: Timestamp.fromDate(new Date())
     };
 
     try {
-      const docRef = await addDoc(collection(db, "survey"), surveyData);
+      const docRef = await addDoc(collection(db, "newsurvey"), surveyData);
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
