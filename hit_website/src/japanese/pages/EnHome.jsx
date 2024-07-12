@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-
+import posthog from 'posthog-js'
 import img1 from "../assets/image_13.png";
 import img2 from "../assets/image_10.png";
 import img3 from "../assets/image_11.png";
@@ -15,7 +15,7 @@ import MenuTranslated from '../MenuTranslated';
 import { useNavigate } from "react-router-dom";
 
 const ENHome = () => {
-
+  
   const navigate = useNavigate();
   const [misclickCount, setMisclickCount] = useState(0);
   const [time, setTime] = useState(0);

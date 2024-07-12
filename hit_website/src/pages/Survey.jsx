@@ -3,7 +3,9 @@ import { Container, Row, Col, Button, Card, ProgressBar } from 'react-bootstrap'
 import { useLocation } from 'react-router-dom';
 import { db } from '../Firebase';
 import { collection, addDoc, getDocs, Timestamp } from 'firebase/firestore';
+import posthog from 'posthog-js'
 const Survey = () => {
+
   const [answers, setAnswers] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [isCompleted, setIsCompleted] = useState(false);
@@ -13,6 +15,11 @@ const Survey = () => {
   const [misclickCount, setMisclickCount] = useState(0);
   const [siteVersion, setSiteVersion] = useState("American")
   const [time, setTime] = useState(0);
+  const [sendPostHog, setSendPostHog] = useState(false)
+  if (!sendPostHog) {
+    posthog.capture('reached_survey', {"result" : "the user reached the survey"})
+    setSendPostHog(true)
+  }
 
 
   useEffect(() => {

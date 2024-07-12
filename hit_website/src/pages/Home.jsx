@@ -6,9 +6,11 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { useNavigate } from "react-router-dom";
 import Menu from '../components/Menu';
+import posthog from 'posthog-js'
 
 
 const Home = () => {
+  
 
   // page content
   const pageTitle = 'Home'
@@ -32,7 +34,7 @@ const Home = () => {
     }
    };
   const handleFirstSuccess = () => {
-    setModalText('You found the first hidden survey link! Now for the final task, find "HTI Survey"')
+    setModalText('You found the first survey link! Now for the final task, find "HTI Survey"')
     setShow(true)
     setFirstClickSuccess(true)
   };
@@ -170,23 +172,27 @@ const Home = () => {
         </Button>
       </InputGroup>
             </Card>
-
-            {[firstClickSuccess ? ["Which donut barnds do you prefer?", "Lifestyle|Sweets|Reccs",  handleWrongClick] : ["Help!! Pls pls pls answer this survey for me", "UI|UX|Survey",  handleWrongClick], ["How was the Welcome Party?", "Freshmen|Sempro|SILS", handleWrongClick], !firstClickSuccess ? ["Into KPOP?! Join our KPOP Dance Circle", "KPOP|Dance|Circle",  handleSecondSuccess] : ["HTI Survey", "UI|UX|Survey",  handleSecondSuccess], 
+                  {(firstClickSuccess &&
+            ([firstClickSuccess ? ["Which donut brands do you prefer?", "Lifestyle | Sweets | Reccs",  handleWrongClick] : ["Help!! Pls pls pls answer this survey for me", "UI|UX|Survey",  handleWrongClick], ["How was the Welcome Party?", "Freshmen | Sempro | SILS", handleWrongClick], !firstClickSuccess ? ["Into KPOP?! Join our KPOP Dance Circle", "KPOP|Dance|Circle",  handleSecondSuccess] : ["HTI Survey", "UI | UX | Survey",  handleSecondSuccess], 
                   ["Tutor Help", "48,029 Posts", handleWrongClick], ["Books Donate", "100 Posts", handleWrongClick], 
                   ["Dorm", "11,000 Posts", handleWrongClick],["Part-Time", "8,645 Posts", handleWrongClick],["Rants", "3,622 Posts", handleWrongClick]].map((category,i) => {
                     return <Card bg={i ===0 && !firstClickSuccess ? "warning":""} onClick={category[2]} style={{ "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)", marginBottom:20}}>
-            <Card.Body>
+                   <Card.Body>
                 <Card.Title>{category[0]}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">{category[1]}</Card.Subtitle>
                 <Card.Text>
-                  Blank text
+                  {"Relevent Information........"}
                 </Card.Text>
                 <Button >click</Button>
               </Card.Body>
-            </Card>
+                  </Card>
                   }
 
-                  )}
+                  ))) || (!firstClickSuccess && /*<Card style={{ "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)", marginBottom:40, }}>
+                     */ <center><img style={{borderRadius:4, margin:4, height:400, width: 400, opacity: 0.4}} src="/assets/images/hti_logo_4.png" /></center>
+                    //</Card>
+                    )
+         }
           </div>
 
     <div className="col-12 col-md-3">
@@ -235,8 +241,8 @@ Currently, we are conducting a study on the differences between Japanese and Wes
               </Card.Body>
             </Card>
             
-            <Card onClick={handleWrongClick} style={{ "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)", marginBottom:20}}>
-            <img style={{cursor:"pointer" ,backgroundColor:'#ADD8E6', height:400, borderRadius:4}} src="/assets/images/image.png" />
+            <Card onClick={handleWrongClick} style={{ "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)", height: 200, marginBottom:20}}>
+            <img style={{cursor:"pointer" , height:400, borderRadius:4}} src="/assets/images/hti_logo_4.png" />
 
             </Card>
                   
