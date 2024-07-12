@@ -75,25 +75,25 @@ const Survey = () => {
       time:time.toString()
     };
 
-    try {
+    /*try {
       const docRef = await addDoc(collection(db, "survey"), surveyData);
       console.log("Document written with ID: ", docRef.id);
     } catch (e) {
       console.error("Error adding document: ", e);
-    }
+    }*/
 
 
     // // Send data via POST request
-    // fetch('https://3pn2cncibc.execute-api.ap-northeast-1.amazonaws.com/default/testFunction', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify(surveyData),
-    // })
-    //   .then(response => response.json())
-    //   .then(data => console.log('POST request success:', data))
-    //   .catch((error) => console.error('POST request error:', error));
+    fetch('https://3pn2cncibc.execute-api.ap-northeast-1.amazonaws.com/default/testFunction', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+      body: JSON.stringify(surveyData),
+    })
+    .then(response => response.json())
+    .then(data => console.log('POST request success:', data))
+    .catch((error) => console.error('POST request error:', error));
 
   };
 
