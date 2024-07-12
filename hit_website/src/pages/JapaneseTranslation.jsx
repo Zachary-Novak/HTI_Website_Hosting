@@ -9,7 +9,7 @@ import Menu from '../components/Menu';
 import posthog from 'posthog-js'
 
 const JapaneseTranslation = () => {
-  posthog.capture('en_jp_home', {"result" : "the user reached the japanese translation for the english website"})
+  
 
   // ページの内容
   const pageTitle = 'ホーム';
