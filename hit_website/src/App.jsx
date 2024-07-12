@@ -5,20 +5,40 @@ import React, { useEffect } from 'react';
 // pages
 import Home from "./pages/Home";
 import Survey from "./pages/Survey";
+import JapaneseTranslation from "./pages/JapaneseTranslation";
 
 import JpHome from "./japanese/pages/JpHome";
 import JpAbout from "./japanese/pages/JpAbout";
+import EnHome from "./japanese/pages/EnHome.jsx";
+import EnAbout from "./japanese/pages/EnAbout";
+
 import Export from "./pages/Export";
 
 const Random = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-      navigate(Math.random() < 0.5 ? '/' : '/jp')
+    const browserLanguage = navigator.language.toLowerCase();
+    const isJapanese = browserLanguage.startsWith('ja');
+    const randomPath = Math.random() < 0.5 ? '/us' : '/jp';
+
+    if (isJapanese) {
+      if (randomPath === '/us') {
+        navigate('/ustranslated');
+      } else {
+        navigate(randomPath);
+      }
+    } else {
+      if (randomPath === '/jp') {
+        navigate('/jptranslated');
+      } else {
+        navigate(randomPath);
+      }
+    }
   }, []);
 
-  return null
-}
+  return null;
+};
 
 const App = () => {
   console.log(navigator)
@@ -45,14 +65,18 @@ const App = () => {
   return (
       <Container>
         <Routes>
-          <Route path="/" element={<Home />} exact />
+          <Route path="/us" element={<Home />} exact />
+          <Route path="/ustranslated" element={< JapaneseTranslation/>} exact />
           <Route path="/survey" element={<Survey />} />
           <Route path="/jp" element={<JpHome />} />
+          <Route path="/jptranslated" element={<EnHome />} />
+
           <Route path="/jpabout" element={<JpAbout />} />
+          <Route path="/jpabouttranslated" element={<EnAbout />} />
 
           <Route path="/export" element={<Export />} />
 
-          <Route path="/random" element={<Random />} />
+          <Route path="/" element={<Random />} />
 
         </Routes>
 

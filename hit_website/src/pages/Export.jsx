@@ -4,7 +4,7 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../Firebase';
 import { CSVLink } from 'react-csv';
 
-const Survey = () => {
+const Export = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -13,21 +13,26 @@ const Survey = () => {
 
   const fetchData = async () => {
     try {
-      const querySnapshot = await getDocs(collection(db, 'survey'));
-      const fetchedData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      const querySnapshot = await getDocs(collection(db, 'newsurvey'));
+      const fetchedData = querySnapshot.docs.map(doc => {
+        const docData = doc.data();
+        return {
+          id: doc.id,
+          ...docData,
+          timestamp: docData.timestamp ? docData.timestamp.toDate().toLocaleString() : ''
+        };
+      });
       setData(fetchedData);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
   };
 
-  const headers = data.length > 0 
-    ? ['siteVersion', ...Object.keys(data[0]).filter(key => key !== 'id' && key !== 'siteVersion')]
-    : [];
+  const headers =  ['siteVersion', "timestamp", "isSmallScreen", "time", "misclickCount", "answers"]
 
   return (
     <Container>
-      <h1>Data Viewer</h1>
+      <h1>Survey Data</h1>
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -40,7 +45,9 @@ const Survey = () => {
           {data.map(item => (
             <tr key={item.id}>
               {headers.map(header => (
-                <td key={`${item.id}-${header}`}>{item[header]}</td>
+                <td key={`${item.id}-${header}`}>
+                  {header === 'timestamp' ? item[header] : JSON.stringify(item[header])}
+                </td>
               ))}
             </tr>
           ))}
@@ -59,4 +66,4 @@ const Survey = () => {
   );
 };
 
-export default Survey;
+export default Export;
