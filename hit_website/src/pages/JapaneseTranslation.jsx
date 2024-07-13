@@ -6,6 +6,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { useNavigate } from "react-router-dom";
 import Menu from '../components/Menu';
+import posthog from 'posthog-js'
 
 
 const JapaneseTranslation = () => {
