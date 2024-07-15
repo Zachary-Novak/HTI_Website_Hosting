@@ -97,7 +97,7 @@ const Home = () => {
             <Card style={{ "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)", marginBottom:20}}>
               <Card.Body>
                 
-                <Card.Text style={{fontSize:12}}>
+                <Card.Text style={{fontSize:".75rem"}}>
                   <div>
                   <strong>
                     Newest and Recent
@@ -118,7 +118,7 @@ const Home = () => {
             <Card style={{ "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)", marginBottom:20}}>
               <Card.Body>
               <Card.Title>Popular Tags</Card.Title>
-                <Card.Text style={{fontSize:12}}>
+                <Card.Text style={{fontSize:".75rem"}}>
                   {[["#computerscience", "82,645 Posts"], ["#アルバイト", "65,523 Posted by this tag"], ["#research", "#survey"], 
                   ["#projects", "48,029 Posts"], ["#startups", "1,300 Posts"], 
                   ].map(category => {
@@ -136,7 +136,7 @@ const Home = () => {
             <Card style={{ "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)", marginBottom:20}}>
               <Card.Body>
                 <Card.Title>Categories</Card.Title>
-                <Card.Text style={{fontSize:12}}>
+                <Card.Text style={{fontSize:".75rem"}}>
                   {[["Class Recommendations", "82,645 Posts", handleWrongClick], ["Homework Help", "65,523 Posted by this tag", handleWrongClick], firstClickSuccess ? ["Already Found!", "0",  handleWrongClick] : ["Student Surveys", "Posts",  handleFirstSuccess], 
                   ["Tutor Help", "48,029 Posts", handleWrongClick], ["Books Donate", "100 Posts", handleWrongClick], 
                   ["Dorm", "11,000 Posts", handleWrongClick],["Part-Time", "8,645 Posts", handleWrongClick],["Rants", "3,622 Posts", handleWrongClick]].map(category => {
@@ -225,7 +225,7 @@ Currently, we are conducting a study on the differences between Japanese and Wes
             <Card style={{ "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)", marginBottom:20}}>
               <Card.Body>
                 <Card.Title>Waseda Meetups</Card.Title>
-                <Card.Text style={{fontSize:12}}>
+                <Card.Text style={{fontSize:".75rem"}}>
                   {[["GDSC Figma Workshop", "Shinjuku, Tokyo"], ["Coffee meetup", "Shibuya, Tokyo"], ["ICC Basketball Tournament", "Waseda Campus, Tokyo"], 
                   ["Tech meetup", "Shinjuku, Tokyo"]].map(category => {
                     return <div onClick={handleWrongClick}  className='hoverable' >

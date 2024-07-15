@@ -93,7 +93,7 @@ const JapaneseTranslation = () => {
             <Card style={{ "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)", marginBottom:20}}>
               <Card.Body>
                 
-                <Card.Text style={{fontSize:12}}>
+                <Card.Text style={{fontSize:".75rem"}}>
                   <div>
                     <strong>最新・最近の投稿</strong>
                     <div>最新の更新を探す</div>
@@ -108,7 +108,7 @@ const JapaneseTranslation = () => {
             <Card style={{ "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)", marginBottom:20}}>
               <Card.Body>
                 <Card.Title>人気のタグ</Card.Title>
-                <Card.Text style={{fontSize:12}}>
+                <Card.Text style={{fontSize:".75rem"}}>
                   {[["#コンピュータサイエンス", "82,645 投稿"], ["#アルバイト", "65,523 投稿"], ["#リサーチ", "#アンケート"], 
                   ["#プロジェクト", "48,029 投稿"], ["#スタートアップ", "1,300 投稿"]
                   ].map(category => {
@@ -124,7 +124,7 @@ const JapaneseTranslation = () => {
             <Card style={{ "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)", marginBottom:20}}>
               <Card.Body>
                 <Card.Title>カテゴリ</Card.Title>
-                <Card.Text style={{fontSize:12}}>
+                <Card.Text style={{fontSize:".75rem"}}>
                   {[["クラスのおすすめ", "82,645 投稿", handleWrongClick], ["宿題ヘルプ", "65,523 投稿", handleWrongClick], firstClickSuccess ? ["既に見つけました！", "0", handleWrongClick] : ["学生アンケート", "投稿", handleFirstSuccess], 
                   ["家庭教師のヘルプ", "48,029 投稿", handleWrongClick], ["本の寄付", "100 投稿", handleWrongClick], 
                   ["寮", "11,000 投稿", handleWrongClick],["パートタイム", "8,645 投稿", handleWrongClick],["こぼれ話", "3,622 投稿", handleWrongClick]].map(category => {
@@ -199,7 +199,7 @@ const JapaneseTranslation = () => {
             <Card style={{ "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)", marginBottom:20}}>
               <Card.Body>
                 <Card.Title>早稲田ミートアップ</Card.Title>
-                <Card.Text style={{fontSize:12}}>
+                <Card.Text style={{fontSize:".75rem"}}>
                   {[["GDSC Figmaワークショップ", "東京都 新宿"], ["コーヒーミートアップ", "東京都 渋谷"], ["ICCバスケットボールトーナメント", "東京都 早稲田キャンパス"], 
                   ["テックミートアップ", "東京都 新宿"]].map(category => {
                     return <div onClick={handleWrongClick} className='hoverable'>

@@ -1,6 +1,6 @@
 import { Container, NavItem } from "react-bootstrap";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // pages
 import Home from "./pages/Home";
@@ -14,6 +14,7 @@ import EnAbout from "./japanese/pages/EnAbout";
 
 import Export from "./pages/Export";
 import posthog from 'posthog-js'
+
 
 const Random = () => {
   const navigate = useNavigate();
@@ -46,7 +47,26 @@ const Random = () => {
 };
 
 const App = () => {
-  console.log(navigator)
+const [fontSize, setFontSize] = useState(14);
+const [didMount, setDidMount] = useState(false)
+
+  const handleKeyDown = (event) => {
+      if (event.key === 'f') {
+        setFontSize(prevSize => Math.min(prevSize + 1, 34)); 
+      } else if (event.key === 'd') {
+        setFontSize(prevSize => Math.max(prevSize - 1, 8)); 
+      }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    setDidMount(true)
+  }, []);
+
+  useEffect(() => {
+    if (didMount) {
+      document.documentElement.style.fontSize = `${fontSize}px`;    }
+  }, [fontSize]);
 
   /*
 
@@ -77,7 +97,7 @@ const App = () => {
   //posthog.capture('test_event', { property: 'from_my_website' })
 
   return (
-      <Container>
+      <Container >
        
         <Routes>
           <Route path="/us" element={<Home />} exact />
